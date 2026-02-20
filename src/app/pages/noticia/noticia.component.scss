@@ -1,0 +1,102 @@
+.page-header {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+
+  h1 {
+    font-size: 3rem;
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+  }
+}
+
+.news {
+  padding: 4rem 0;
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .news-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: #00d4ff;
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+    }
+
+    &.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .news-image {
+        font-size: 6rem;
+        min-height: 300px;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .news-image {
+      font-size: 4rem;
+      padding: 2rem;
+      text-align: center;
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .news-content {
+      padding: 1.5rem;
+
+      .news-category {
+        display: inline-block;
+        background: rgba(0, 212, 255, 0.2);
+        color: #00d4ff;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        color: #ffffff;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      .news-excerpt {
+        color: #b0b0b0;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .news-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: #666;
+      }
+    }
+  }
+}
